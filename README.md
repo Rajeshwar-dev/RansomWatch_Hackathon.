@@ -1,170 +1,254 @@
-# RansomWatch — Ransomware Early Warning Simulator
+# 🛡️ RansomWatch
+### AI-Powered Ransomware Early Warning & Threat Detection System
 
-A real-time cybersecurity tool that detects and stops ransomware attacks before they complete.
+RansomWatch is an AI-powered cybersecurity platform designed to detect ransomware attacks at their earliest stage before critical data is encrypted. Instead of relying only on traditional signature-based detection, the platform continuously monitors file activities, process behavior, and suspicious encryption patterns to generate real-time alerts and reduce potential damage.
 
-## Features
+> **"Detect Early. Respond Faster. Protect Smarter."**
 
-- 🐦 **Canary File System**: Honeypot files that trigger alerts when accessed
-- 🔢 **File Entropy Analyzer**: Detects encrypted files by measuring randomness
-- 💻 **Process Behavior Monitor**: Tracks suspicious processes in real-time
-- 📊 **AI Threat Score Engine**: Calculates risk scores (0-100)
-- 🔌 **Automatic Network Kill Switch**: Isolates the system to stop spread
-- 📱 **Mobile Responsive**: Works on all device sizes
-- 🎨 **Beautiful UI**: Modern dark theme with smooth animations
+---
 
-## Tech Stack
+# 🚀 Overview
 
-- **Frontend**: React 18, Vite, Tailwind CSS, Framer Motion, Clerk (Auth)
-- **Backend**: Node.js, Express, Sequelize (ORM), PostgreSQL, Redis, Socket.io, Zod
-- **ML Service**: Python 3.11, FastAPI, Scikit-learn, Watchdog, Psutil
-- **DevOps**: Docker, Docker Compose, GitHub Actions
+Modern ransomware attacks can encrypt thousands of files within seconds, often bypassing traditional antivirus solutions. RansomWatch addresses this challenge by combining behavioral monitoring, honeypot (canary) files, entropy analysis, and AI-assisted threat evaluation to identify attacks before they spread across the system.
 
-## Project Structure
+---
 
+# ✨ Features
+
+- 🧠 AI-Assisted Threat Detection
+- 🔍 Real-Time File System Monitoring
+- 🛡️ Honeypot (Canary) File Protection
+- 📊 Interactive Security Dashboard
+- 📈 Threat Analytics & Visualization
+- ⚡ Live Process Monitoring
+- 🚨 Instant Security Alerts
+- 🌐 Network Kill Switch Simulation
+- 🔐 Secure Authentication with Clerk
+- 📋 Event Logging & Threat Reports
+- 📱 Fully Responsive Modern UI
+- 🎨 Premium Cybersecurity SaaS Interface
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                          ┌─────────────────────────┐
+                          │      User / Admin       │
+                          │   Web Dashboard Access  │
+                          └────────────┬────────────┘
+                                       │
+                                       ▼
+                  ┌────────────────────────────────────┐
+                  │      React + Vite Frontend         │
+                  │ Dashboard • Alerts • Analytics     │
+                  └────────────────┬───────────────────┘
+                                   │
+                        REST API / WebSocket
+                                   │
+        ┌──────────────────────────┼──────────────────────────┐
+        │                          │                          │
+        ▼                          ▼                          ▼
+┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
+│ Authentication  │      │   Backend API   │      │   ML Service    │
+│     (Clerk)     │      │  Node + Express │      │ AI Threat Model │
+└─────────────────┘      └────────┬────────┘      └────────┬────────┘
+                                  │                        │
+                                  └──────────┬─────────────┘
+                                             │
+                         ┌───────────────────▼────────────────────┐
+                         │      Threat Detection Engine            │
+                         │                                        │
+                         │ • File System Monitoring               │
+                         │ • Process Behavior Analysis            │
+                         │ • File Entropy Analysis                │
+                         │ • Honeypot (Canary) File Detection     │
+                         │ • Threat Score Calculation             │
+                         └───────────────────┬────────────────────┘
+                                             │
+            ┌────────────────────────────────┼───────────────────────────────┐
+            ▼                                ▼                               ▼
+ ┌──────────────────┐              ┌──────────────────┐           ┌──────────────────┐
+ │   Alert Manager  │              │ Network Kill     │           │ Activity Logger  │
+ │ UI / Email Alert │              │ Switch Simulator │           │  & Event Logs    │
+ └─────────┬────────┘              └────────┬─────────┘           └────────┬─────────┘
+           └────────────────────────────────┼────────────────────────────────┘
+                                            │
+                                            ▼
+                           ┌────────────────────────────────┐
+                           │      PostgreSQL Database       │
+                           │  Alerts • Logs • Reports •    │
+                           │     Monitoring Information     │
+                           └────────────────────────────────┘
 ```
-ransomwatch/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── lib/
-│   └── package.json
-├── backend/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── middleware/
-│   └── package.json
-├── ml-service/
-│   ├── app/
-│   │   ├── analyzer/
-│   │   ├── watcher/
-│   │   └── api/
-│   └── main.py
-├── docker/
-└── docker-compose.yml
+
+---
+
+# ⚙️ How It Works
+
+### Step 1 — Continuous Monitoring
+The system continuously monitors selected files, folders, and running processes for suspicious activities.
+
+### Step 2 — Behavioral Analysis
+It tracks unusual patterns such as:
+- Rapid file renaming
+- Mass file modifications
+- Unauthorized file encryption
+- Abnormal process behavior
+
+### Step 3 — Honeypot Detection
+Hidden canary files are placed inside protected directories. Any unauthorized access to these files instantly raises a security flag.
+
+### Step 4 — AI Threat Evaluation
+Behavioral data and entropy analysis are processed by the AI engine to calculate a real-time threat score.
+
+### Step 5 — Alert & Response
+If the threat score exceeds the safe threshold:
+- User receives instant alerts.
+- Event logs are generated.
+- Network Kill Switch simulation can be triggered to isolate the system.
+
+---
+
+# 📊 Dashboard Modules
+
+## 🏠 Dashboard
+- System Security Overview
+- Active Threat Score
+- Protected Files Counter
+- Live Monitoring Status
+- AI Threat Evaluation
+
+## 🚨 Alerts Center
+- Real-Time Threat Notifications
+- Alert Severity Levels
+- Event Timeline
+- Incident Details
+
+## 📈 Threat Analytics
+- Attack Trend Graphs
+- Threat Distribution Charts
+- File Activity Monitoring
+- Historical Reports
+
+## ⚙️ Process Monitor
+- Running Process Tracking
+- Suspicious Activity Detection
+- CPU & Memory Usage
+- Process Threat Score
+
+## 🛡️ Canary File Manager
+- Protected Honeypot Files
+- Trigger Status
+- File Access Timeline
+
+## 🔧 Settings
+- Monitoring Preferences
+- Notification Settings
+- Security Threshold Configuration
+- User Profile & Authentication
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technology |
+|----------|------------|
+| Frontend | React.js + Vite |
+| UI Framework | Tailwind CSS |
+| Animation | Framer Motion |
+| Backend | Node.js + Express.js |
+| Authentication | Clerk |
+| Database | PostgreSQL |
+| AI/ML Service | Python |
+| Real-Time Communication | Socket.io |
+| API Documentation | Swagger/OpenAPI |
+| Logging | Winston |
+| Validation | Joi |
+| Containerization | Docker |
+
+---
+
+# 📂 Project Structure
+
+```text
+code-votex/
+│
+├── frontend/          # React + Vite Frontend
+├── backend/           # Node.js + Express API
+├── ml-service/        # AI & Threat Detection Service
+├── docker/            # Docker Configuration
+├── .github/           # GitHub Workflows
+└── README.md
 ```
 
-## Quick Start (Docker)
+---
 
-1. **Clone the repo**:
-   ```bash
-   git clone <your-repo-url>
-   cd ransomwatch
-   ```
+# 🚀 Getting Started
 
-2. **Copy env files**:
-   ```bash
-   cp backend/.env.example backend/.env
-   cp ml-service/.env.example ml-service/.env
-   cp frontend/.env.example frontend/.env
-   ```
+## Clone the Repository
 
-3. **Update environment variables**:
-   - Add your Clerk API keys to `frontend/.env`
-   - Add `ML_API_KEY` to both `backend/.env` and `ml-service/.env`
-
-4. **Start all services**:
-   ```bash
-   docker-compose up --build
-   ```
-
-5. **Access the app**:
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-   - ML Service API: http://localhost:8000
-
-## Quick Start (Local)
-
-### Backend
 ```bash
-cd backend
-npm install
-npm run dev
+git clone https://github.com/sameer-sahu25/code-votex.git
+cd code-votex
 ```
 
-### ML Service
-```bash
-cd ml-service
-pip install -r requirements.txt
-python main.py
-```
+## Frontend Setup
 
-### Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## Services
+## Backend Setup
 
-| Service       | Port | Description                 |
-|---------------|------|-----------------------------|
-| Frontend      | 3000 | React UI                    |
-| Backend       | 5000 | Express REST API + Socket   |
-| ML Service    | 8000 | FastAPI ML Service          |
-| PostgreSQL    | 5432 | Database                    |
-| Redis         | 6379 | Caching & sessions          |
-
-## Development
-
-### Prerequisites
-- Node.js 18+
-- Python 3.11+
-- Docker & Docker Compose (optional)
-
-### Environment Variables
-
-**Backend** (.env)
-```
-NODE_ENV=development
-PORT=5000
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=ransomwatch
-DB_USER=postgres
-DB_PASSWORD=password
-REDIS_HOST=localhost
-REDIS_PORT=6379
-CLERK_SECRET_KEY=your_clerk_secret
-ML_API_KEY=your_ml_api_key
-ML_SERVICE_URL=http://localhost:8000
-```
-
-**Frontend** (.env)
-```
-VITE_CLERK_PUBLISHABLE_KEY=pk_live_...
-VITE_BACKEND_URL=http://localhost:5000
-```
-
-**ML Service** (.env)
-```
-ML_API_KEY=your_ml_api_key
-BACKEND_URL=http://localhost:5000
-```
-
-## Testing
-
-### Backend Tests
 ```bash
 cd backend
-npm test
+npm install
+npm run dev
 ```
 
-### Frontend Build
-```bash
-cd frontend
-npm run build
-```
+---
 
-## Deployment
+# 🎯 Future Scope
 
-The project includes a GitHub Actions CI/CD pipeline at `.github/workflows/deploy.yml`.
-It runs tests on PRs and deploys on pushes to `main`.
+- 🤖 AI & Machine Learning Based Threat Classification
+- 📧 Real-Time Email & Mobile Alert System
+- ☁️ Cloud-Based Threat Intelligence Sharing
+- 💾 Automatic File Backup & Recovery
+- 🌍 Multi-Platform Support (Windows, Linux, macOS)
+- 📊 Advanced Predictive Threat Analytics
+- 🔗 SIEM & Enterprise Security Tool Integration
+- 🛡️ Automated Incident Response & Isolation
 
+---
 
-## License
+# 📸 Screenshots
 
-MIT
+- 🖥️ Landing Page
+- 📊 Dashboard
+- 🚨 Alerts Center
+- 📈 Analytics
+- ⚙️ Process Monitor
+- 🛡️ Canary File Manager
+- 🔧 Settings
+
+*(Add screenshots here after deployment.)*
+
+---
+
+# 👨‍💻 Team
+
+**Developed by Team Code-Votex**  
+🚀 Built for Cybersecurity Innovation, AI Research, and Hackathon Excellence.
+
+---
+
+# 📜 License
+
+This project is intended for educational purposes, cybersecurity awareness, research, and hackathon demonstrations. Contributions and improvements are always welcome.
+
+---
+
+## ⭐ If you like this project, don't forget to give it a Star on GitHub!
